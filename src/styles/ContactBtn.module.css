@@ -1,0 +1,11 @@
+.button {
+  color: white;
+  transition: 0.5s;
+  padding: 0 10px;
+}
+
+.button:hover {
+  transition: 0.5s;
+  color: rgb(0, 140, 255);
+  font-size: 115%;
+}
