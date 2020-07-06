@@ -10,28 +10,38 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import ProgressBar from "../components/progressBar";
-import ProjectsSection from "../components/projectsSection";
+import ProjectButton from "../components/projectButton";
 
 class Home extends Component {
   state = {};
+  data = {
+    projects: [
+      {
+        title: "FreeMedCure",
+        subtitle: "a medical record system",
+        description:
+          "I have built a system for my friend who is studying chinese medicine. Want to know more?",
+        image: require("../assets/img/projects/freemedcure/login_page.png"),
+      },
+    ],
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
   render() {
+    const { title, subtitle, description, image } = this.data.projects[0];
     return (
       <>
         <header className="bg-background big-parallax">
           <div className="container">
             <div className="row align-items-center">
               <div className="bg-heading col-12 col-md-6">
-                <h1>
-                  <span className="highlight">Welcome</span> to my web!
-                </h1>
+                <h1>Welcome!</h1>
                 <p className="lead">
                   I'm <span className="highlight">Gordon</span>, who is
-                  passionate about web development and exploring the latest
+                  passionate about web development and love exploring the latest
                   technologies.
                 </p>
               </div>
@@ -140,16 +150,30 @@ class Home extends Component {
         </div>
 
         <div id="projects-div" className="parallax">
-          <div className="container pt-5">
+          <div className="container">
             <div className="row">
-              <p className="description col-md-6 col-12">
-                Take a look of what I achieved. Actions speak louder than
-                words...
-              </p>
-              <h1 className="col-md-6 col-12 heading">Projects</h1>
+              <div className="col-md-6 col-12">
+                <p className="description mt-3">
+                  Take a look of what I achieved. Actions speak louder than
+                  words...
+                </p>
+              </div>
+              <div className="col-md-6 col-12">
+                <h1 className="heading">Projects</h1>
+              </div>
             </div>
           </div>
-          <ProjectsSection />
+
+          <div className="container px-4">
+            <div className="row pb-5">
+              <ProjectButton
+                title={title}
+                subtitle={subtitle}
+                description={description}
+                image={image}
+              />
+            </div>
+          </div>
         </div>
       </>
     );

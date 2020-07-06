@@ -51,7 +51,7 @@ class NavBar extends Component {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav mr-auto mb-3">
             <Link to="/home" className="navLink">
               Home
             </Link>
@@ -77,14 +77,14 @@ class NavBar extends Component {
               </div>
             </li>
           </ul>
-          <ul className="navbar-nav contact">
-            <li>
+          <div className="d-flex px-2">
+            <div>
               <LinkedInBtn />
-            </li>
-            <li>
+            </div>
+            <div>
               <EmailBtn />
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </nav>
     );

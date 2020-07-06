@@ -60,13 +60,15 @@ class FreeMedCure extends Component {
         <div id="freemedcure-wrapper">
           <div className="container" id="implmentation">
             <div className="row align-items-center">
-              <h3>Implementation</h3>
-              <p className="mt-3">
-                This application is developed with Laravel, which is an open
-                source framework for PHP. I stored the data with MySQL database
-                and I manage it through phpMyAdmin. I have used some libraries
-                like bootstrap and jQuery as well.
-              </p>
+              <div className="col">
+                <h3>Implementation</h3>
+                <p className="mt-3">
+                  This application is developed with Laravel, which is an open
+                  source framework for PHP. I stored the data with MySQL
+                  database and I manage it through phpMyAdmin. I have used some
+                  libraries like bootstrap and jQuery as well.
+                </p>
+              </div>
             </div>
             <div className="card-deck mt-4 text-center mb-5">
               <div className="card">
@@ -109,9 +111,11 @@ class FreeMedCure extends Component {
           <div id="highlight-section">
             <div className="container">
               <div className="row">
-                <h3 id="highlight" className="mt-5">
-                  Highlight Features
-                </h3>
+                <div className="col">
+                  <h3 className="highlight" className="mt-5">
+                    Highlight Features
+                  </h3>
+                </div>
               </div>
               <p id="description">
                 My friend has asked me to build some feature that makes the
@@ -169,23 +173,25 @@ class FreeMedCure extends Component {
           <div id="reflection">
             <div className="container">
               <div className="row">
-                <h1>Reflection</h1>
-                <p>
-                  First of all, thank you for browsing my web and knowing about
-                  me. This project may look easy at your first glaze that it is
-                  an online system for inputting data. However, this is quite
-                  tricky when I implement it because I have encountered quite a
-                  number of problems, from front-end styling to php backend
-                  script. I’m so glad that I finally finished a web application
-                  that is useful for other people.
-                </p>
+                <div className="col">
+                  <h1>Reflection</h1>
+                  <p>
+                    First of all, thank you for browsing my web and knowing
+                    about me. This project may look easy at your first glaze
+                    that it is an online system for inputting data. However,
+                    this is quite tricky when I implement it because I have
+                    encountered quite a number of problems, from front-end
+                    styling to php backend script. I’m so glad that I finally
+                    finished a web application that is useful for other people.
+                  </p>
 
-                <p>
-                  It is really satisfying to finish this application, but this
-                  does not mean it is the end. I will keep improving my
-                  programming skills and develope more useful and nice-looking
-                  web applications!
-                </p>
+                  <p>
+                    It is really satisfying to finish this application, but this
+                    does not mean it is the end. I will keep improving my
+                    programming skills and develope more useful and nice-looking
+                    web applications!
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -28,10 +28,10 @@
   color: white;
 }
 
-#highlight-section #highlight {
+#highlight-section h3.highlight {
   margin: auto;
   font-size: 2rem;
-  font-family: Comic Sans, Comic Sans MS, cursive;
+  font-family: Comic Sans, Comic Sans MS, Andale Mono, monospace;
 }
 
 #highlight-section #description {

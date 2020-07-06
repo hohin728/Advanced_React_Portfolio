@@ -2,7 +2,7 @@
 
 header.bg-background {
   /* parallax */
-  width: 100%;
+  max-width: 100%;
   height: 100vh;
   background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
     url("../assets/img/my_smile_crop.jpg") no-repeat 50% 50%;
@@ -40,7 +40,7 @@ header.bg-background {
 #skills-div {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
     url("../assets/img/bw_keyboard.jpg") no-repeat 50% 50%;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -82,10 +82,12 @@ div.icons h5 {
 }
 
 #projects-div h1.heading {
-  font-size: 5rem;
+  font-size: 4rem;
   text-align: right;
   color: black;
   transform: rotate(10deg);
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 #projects-div .description {
@@ -97,4 +99,18 @@ div.icons h5 {
 
 .txt-grey {
   color: lightgrey;
+}
+
+ul.navbar-nav.contact li {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+  #skills-div {
+    background-attachment: scroll;
+  }
+
+  header.bg-background {
+    background-attachment: scroll;
+  }
 }

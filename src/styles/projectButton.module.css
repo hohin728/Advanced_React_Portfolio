@@ -11,40 +11,6 @@
   padding: 30px;
 }
 
-.card {
-  min-width: 300px;
-  min-height: 360px;
-  border-radius: 15px;
-  padding: 1.5rem;
-  background: white;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  -webkit-transition: 0.4s ease-out;
-  transition: 0.4s ease-out;
-  -webkit-box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-}
-
-.card:hover {
-  -webkit-transform: translateY(20px);
-  transform: translateY(20px);
-}
-
-.card:hover:before {
-  opacity: 1;
-}
-
-.card:hover .info {
-  opacity: 1;
-  -webkit-transform: translateY(0px);
-  transform: translateY(0px);
-}
-
 .card:before {
   content: "";
   position: absolute;
@@ -59,6 +25,41 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
   opacity: 0;
+}
+
+.card:hover:before {
+  opacity: 1;
+}
+
+.card {
+  /* min-width: 300px;
+  min-height: 360px; */
+  max-width: 100%;
+  border-radius: 15px;
+  padding: 1.5rem;
+  background: white;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  -webkit-box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.7);
+}
+
+.card:hover {
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+}
+
+.card:hover .info {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
 }
 
 .card img {
@@ -109,4 +110,8 @@
 .card .info button:hover {
   background: dodgerblue;
   color: white;
+}
+
+.lightGreen {
+  color: rgba(146, 216, 212, 0.747);
 }
