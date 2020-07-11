@@ -18,10 +18,10 @@ const Footer = () => {
             <h5>
               <small>LinkedIn: </small>
               <a
-                href="https://www.linkedin.com/in/ho-hin-tang-46000413b/"
+                href="https://www.linkedin.com/in/tang-ho-hin-gordon/"
                 className={styles.link}
               >
-                https://www.linkedin.com/in/ho-hin-tang-46000413b/
+                https://www.linkedin.com/in/tang-ho-hin-gordon/
               </a>
             </h5>
             <h5>

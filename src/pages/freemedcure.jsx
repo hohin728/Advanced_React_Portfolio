@@ -12,11 +12,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class FreeMedCure extends Component {
   video = require("../assets/videos/FreeMedCure_Demo.mp4");
-  // backgroundImg = {
-  //   bigCircle: require("../assets/img/eclipse_big.svg"),
-  //   middleCircle: require("../assets/img/eclipse_middle.svg"),
-  //   smallCircle: require("../assets/img/eclipse_small.svg"),
-  // };
   data = {
     title: "FreeMedCure",
     subtitle:
@@ -196,21 +191,6 @@ class FreeMedCure extends Component {
             </div>
           </div>
         </div>
-        {/* <img
-              src={this.backgroundImg.bigCircle}
-              className="bigCircle"
-              alt="Big Size Circle"
-            />
-            <img
-              src={this.backgroundImg.middleCircle}
-              className="middleCircle"
-              alt="Middle Size Circle"
-            />
-            <img
-              src={this.backgroundImg.smallCircle}
-              className="smallCircle"
-              alt="Small Size Circle"
-            /> */}
       </>
     );
   }

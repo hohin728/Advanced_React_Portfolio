@@ -6,7 +6,7 @@ import { button } from "../styles/ContactBtn.module.css";
 const LinkedInBtn = ({ size = "2x" }) => {
   return (
     <a
-      href="https://www.linkedin.com/in/ho-hin-tang-46000413b/"
+      href="https://www.linkedin.com/in/tang-ho-hin-gordon/"
       target="_blank"
       rel="noopener noreferrer"
       className={button}

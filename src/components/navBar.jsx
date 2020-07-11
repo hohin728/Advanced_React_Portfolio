@@ -10,19 +10,32 @@ class NavBar extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.handleNavBg);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.handleNavBg);
   }
 
-  handleScroll = (event) => {
-    let navClass = "";
-    if (window.scrollY !== 0) {
-      navClass = "navBg";
+  handleNavBg = () => {
+    const onTop = window.scrollY === 0 ? true : false;
+    const expanded =
+      document
+        .getElementById("navbar-toggle-button")
+        .getAttribute("aria-expanded") === "true";
+
+    if (onTop && !expanded) {
+      this.setState({ navClass: "" });
+    } else {
+      this.setState({ navClass: "navBg" });
     }
-    this.setState({ navClass });
+  };
+
+  handleClick = () => {
+    // if screen solution is <= 768px, the navbar toggler button appears
+    // only if the button appears we will execute the following line
+    if (window.matchMedia("(max-width: 768px)").matches)
+      document.getElementById("navbar-toggle-button").click();
   };
 
   render() {
@@ -39,6 +52,7 @@ class NavBar extends Component {
         </Link>
 
         <button
+          id="navbar-toggle-button"
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -46,16 +60,17 @@ class NavBar extends Component {
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={this.handleNavBg}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto mb-3">
-            <Link to="/home" className="navLink">
+          <ul className="navbar-nav mr-auto">
+            <Link to="/home" className="navLink" onClick={this.handleClick}>
               Home
             </Link>
-            <Link to="/aboutme" className="navLink">
+            <Link to="/aboutme" className="navLink" onClick={this.handleClick}>
               About Me
             </Link>
             <li className="nav-item dropdown">
@@ -71,20 +86,25 @@ class NavBar extends Component {
               </a>
 
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link to="/projects/freemedcure" className="dropdown-item">
+                <Link
+                  to="/projects/freemedcure"
+                  className="dropdown-item"
+                  onClick={this.handleClick}
+                >
                   FreeMedCure
                 </Link>
               </div>
             </li>
           </ul>
-          <div className="d-flex px-2">
-            <div>
-              <LinkedInBtn />
-            </div>
-            <div>
-              <EmailBtn />
-            </div>
-          </div>
+
+          <ul className="mt-5 mt-md-0 ml-auto">
+            <li className="list-inline-item">
+              <LinkedInBtn onClick={this.handleClick} />
+            </li>
+            <li className="list-inline-item">
+              <EmailBtn onClick={this.handleClick} />
+            </li>
+          </ul>
         </div>
       </nav>
     );
