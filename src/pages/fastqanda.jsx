@@ -27,6 +27,7 @@ class FastQandA extends Component {
     title: "Fast Q&A",
     subtitle:
       "A web-based e-learning platform aims at providing fast questioning and answering process to enhance in-class interactivity.",
+    video: require("../assets/videos/FastQ&A_1min_Demo.mp4"),
     techIcons: [
       { title: "Laravel", icon: faLaravel },
       { title: "PHP", icon: faPhp },
@@ -128,6 +129,20 @@ class FastQandA extends Component {
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+
+          <section className={styles.videoDemo}>
+            <div className={styles.wrapper}>
+              <div className="container">
+                <div className="row">
+                  <h1 className="col p-4">Video Demo</h1>
+                </div>
+              </div>
+              <video controls>
+                <source src={this.data.video} type="video/mp4" />
+                Your browser does not support the video tag
+              </video>
             </div>
           </section>
 

@@ -17,6 +17,30 @@
     }
   }
 
+  section.videoDemo {
+    .wrapper {
+      background-color: black;
+
+      h1 {
+        color: white;
+        font-size: 4rem;
+        text-align: center;
+        font-family: monospace;
+      }
+
+      video {
+        max-width: 100%;
+        max-height: 85vh;
+        display: block;
+        margin: auto;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
   section.gallery {
     background: url("../assets/img/dots_background.png") repeat center;
     padding: 30px 30px 0 30px;
