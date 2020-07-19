@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../styles/freemedcure.css";
+import styles from "../styles/freemedcure.module.scss";
 import CurvedHeader from "../components/curedHeader";
 import {
   faLaravel,
@@ -8,7 +8,7 @@ import {
   faBootstrap,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import TechIcon from "../components/techIcon";
 
 class FreeMedCure extends Component {
   video = require("../assets/videos/FreeMedCure_Demo.mp4");
@@ -16,6 +16,13 @@ class FreeMedCure extends Component {
     title: "FreeMedCure",
     subtitle:
       "I have built a web-based data-entry system for my friend who is studying chinese medicine. It helps doctors to keep a consistent records of patients' conditions and distributed prescription. ",
+    techIcons: [
+      { title: "Laravel", icon: faLaravel },
+      { title: "PHP", icon: faPhp },
+      { title: "Bootstrap", icon: faBootstrap },
+      { title: "jQuery", icon: faJsSquare },
+      { title: "MySQL", icon: faDatabase },
+    ],
     examples: [
       {
         title: "Customized Login Page",
@@ -48,12 +55,12 @@ class FreeMedCure extends Component {
   }
 
   render() {
-    const { title, subtitle } = this.data;
+    const { title, subtitle, techIcons, examples } = this.data;
     return (
       <>
         <CurvedHeader title={title} subtitle={subtitle} />
-        <div id="freemedcure-wrapper">
-          <div className="container" id="implmentation">
+        <div className={styles.wrapper}>
+          <div className="container">
             <div className="row align-items-center">
               <div className="col">
                 <h3>Implementation</h3>
@@ -66,53 +73,22 @@ class FreeMedCure extends Component {
               </div>
             </div>
             <div className="card-deck mt-4 text-center mb-5">
-              <div className="card">
-                <div className="card-body">
-                  <FontAwesomeIcon icon={faLaravel} size="5x" />
-                  <h5 className="card-title mt-2">Laravel</h5>
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="card-body">
-                  <FontAwesomeIcon icon={faPhp} size="5x" />
-                  <h5 className="card-title mt-2">PHP</h5>
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="card-body">
-                  <FontAwesomeIcon icon={faBootstrap} size="5x" />
-                  <h5 className="card-title mt-2">Bootstrap</h5>
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="card-body">
-                  <FontAwesomeIcon icon={faJsSquare} size="5x" />
-                  <h5 className="card-title mt-2">jQuery</h5>
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="card-body">
-                  <FontAwesomeIcon icon={faDatabase} size="5x" />
-                  <h5 className="card-title mt-2">MySQL</h5>
-                </div>
-              </div>
+              {techIcons.map((techItem, index) => (
+                <TechIcon item={techItem} key={`techItem-${index}`} />
+              ))}
             </div>
           </div>
 
-          <div id="highlight-section">
+          <div className={styles.hightlight}>
             <div className="container">
               <div className="row">
                 <div className="col">
-                  <h3 className="highlight" className="mt-5">
+                  <h3 className={`mt-5 ${styles.highlight}`}>
                     Highlight Features
                   </h3>
                 </div>
               </div>
-              <p id="description">
+              <p className={styles.description}>
                 My friend has asked me to build some feature that makes the
                 input process faster. I have designed the following features to
                 make the system more user-friendly and make the process more
@@ -121,15 +97,17 @@ class FreeMedCure extends Component {
 
               <div className="row my-3 justify-content-center">
                 <div className="col-md-6 mb-5 col-12">
-                  <h3 id="feature1" className="feature">
-                    <span className="yellowTxt">Automatic Increment</span> of
-                    Input Rows
+                  <h3 className={`${styles.feature1} ${styles.feature}`}>
+                    <span className={styles.yellowTxt}>
+                      Automatic Increment
+                    </span>{" "}
+                    of Input Rows
                   </h3>
                 </div>
                 <div className="col-md-6 col-12">
-                  <h3 id="feature2" className="feature">
-                    <span className="yellowTxt">Auto completion</span> of Text
-                    Field
+                  <h3 className={`${styles.feature2} ${styles.feature}`}>
+                    <span className={styles.yellowTxt}>Auto completion</span> of
+                    Text Field
                   </h3>
                 </div>
               </div>
@@ -140,15 +118,17 @@ class FreeMedCure extends Component {
             </video>
           </div>
 
-          <div id="gallery-section">
-            {this.data.examples.map((item, index) => (
+          <div className={styles.gallery}>
+            {examples.map((item, index) => (
               <div
                 className="d-flex flex-column flex-md-row"
                 key={`example-${index}`}
               >
                 <div
                   className={
-                    index % 2 === 0 ? "description" : "description order-md-1"
+                    index % 2 === 0
+                      ? styles.description
+                      : `${styles.description} order-md-1`
                   }
                 >
                   <h2>{item.title}</h2>
@@ -165,7 +145,7 @@ class FreeMedCure extends Component {
             ))}
           </div>
 
-          <div id="reflection">
+          <div className={styles.reflection}>
             <div className="container">
               <div className="row">
                 <div className="col">

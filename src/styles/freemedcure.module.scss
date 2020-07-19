@@ -1,0 +1,117 @@
+/* ===== freemedcure ===== */
+
+.wrapper {
+  padding-top: 30px;
+
+  h3 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  // ===== highlight section =====
+  div.hightlight {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+
+    h3.highlight {
+      margin: auto;
+      font-size: 2rem;
+      font-family: Comic Sans, Comic Sans MS, Andale Mono, monospace;
+    }
+
+    p.description {
+      max-width: 800px;
+      text-align: center;
+      color: lightgrey;
+      margin: auto;
+      margin: 40px auto;
+    }
+
+    .yellowTxt {
+      color: yellow;
+    }
+
+    h3.feature1 {
+      transform: rotate(-5deg);
+      display: inline-block;
+    }
+
+    h3.feature2 {
+      transform: rotate(5deg);
+    }
+
+    h3.feature {
+      margin: 10px;
+      font-size: 1.8rem;
+      display: block;
+      font-family: Andale Mono, monospace;
+      border: 2px grey solid;
+      border-radius: 3rem;
+      padding: 20px;
+    }
+
+    video {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      max-height: 90vh;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  // ===== gallery section =====
+  div.gallery {
+    background: url("../assets/img/dots_background.png") repeat center;
+    padding: 30px 30px 0 30px;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    .description {
+      min-width: 50%;
+      padding: 30px;
+      margin: auto;
+    }
+  }
+
+  // ===== reflection section =====
+  .reflection {
+    background-color: black;
+    color: white;
+    padding: 50px 0;
+    line-height: 2;
+
+    h1 {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+/* .bigCircle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  height: 90%;
+  z-index: -1;
+}
+
+.middleCircle {
+  position: absolute;
+  top: 80px;
+  right: -200px;
+  z-index: -1;
+}
+
+.smallCircle {
+  position: absolute;
+  bottom: 0;
+  left: -50px;
+  z-index: -1;
+} */

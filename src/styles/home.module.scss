@@ -1,0 +1,113 @@
+/* ===== home.css ===== */
+
+.header {
+  /* parallax */
+  max-width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+    url("../assets/img/my_smile_crop.jpg") no-repeat 50% 50%;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  :global(.container),
+  .content {
+    height: 100%;
+    color: white;
+  }
+
+  .highlight {
+    font-weight: bold;
+    font-family: monospace;
+    color: yellow;
+  }
+}
+
+/* ===== Who am I section ===== */
+section.whoAmI {
+  background-color: rgb(20, 20, 20);
+  color: white;
+
+  .largeBlueTxt {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: rgb(0, 123, 255);
+  }
+}
+
+// ===== skills section =====
+section.skills {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+    url("../assets/img/bw_keyboard.jpg") no-repeat 50% 50%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+
+  h1 {
+    font-size: 5rem;
+    transform: rotate(-10deg);
+  }
+
+  img.wordCloud {
+    max-width: 100%;
+  }
+
+  div.icons {
+    :global(.container .row) {
+      margin-top: 20px;
+    }
+
+    h5 {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding-left: 10px;
+      position: relative;
+      bottom: 20px;
+    }
+  }
+
+  p.greyTxt {
+    color: lightgrey;
+  }
+}
+
+// ===== projects section =====
+section.projects {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../assets/img/geeks_background.svg") repeat;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+
+  h1.heading {
+    font-size: 4rem;
+    text-align: right;
+    color: black;
+    transform: rotate(10deg);
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  .description {
+    color: rgb(30, 30, 30);
+    height: 100px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header,
+  section.skills,
+  section.projects {
+    background-attachment: scroll;
+  }
+}

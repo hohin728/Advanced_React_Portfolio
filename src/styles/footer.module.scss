@@ -1,0 +1,20 @@
+/* ===== footer.module.css ===== */
+
+.footer {
+  background-color: rgb(20, 20, 20);
+  min-height: 250px;
+  padding-top: 20px;
+  padding-bottom: 70px;
+  color: white;
+  text-align: left;
+
+  .link {
+    color: yellow;
+    transition: 0.5s;
+
+    &:hover {
+      color: rgb(71, 171, 253);
+      transition: 0.5s;
+    }
+  }
+}

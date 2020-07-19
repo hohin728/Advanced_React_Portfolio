@@ -1,0 +1,88 @@
+.content {
+  section.backgroundInfo {
+    margin-top: 30px;
+
+    :global(p) {
+      color: grey;
+      font-size: 1.3rem;
+    }
+
+    .bold {
+      font-weight: bold;
+      font-size: 120%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  section.gallery {
+    background: url("../assets/img/dots_background.png") repeat center;
+    padding: 30px 30px 0 30px;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    .wrapper div.description,
+    div.image {
+      width: 100%;
+    }
+
+    .description {
+      padding: 30px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
+  }
+
+  section.StudentAnswers {
+    h1 {
+      text-align: center;
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    :global(.d-flex > div) {
+      margin: 0 10px;
+    }
+
+    p {
+      margin: 20px 0;
+      font-size: 1.35rem;
+    }
+
+    img.image {
+      width: 100%;
+    }
+
+    .card {
+      border: grey 1.5px solid;
+      border-radius: 20px;
+      overflow: hidden;
+
+      p {
+        color: #595959;
+      }
+    }
+  }
+
+  section.implementation {
+    h3 {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  section.reflection {
+    margin: 30px 0;
+  }
+}

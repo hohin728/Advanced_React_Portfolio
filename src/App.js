@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import AboutMe from "./pages/aboutme";
 import Footer from "./components/footer";
 import FreeMedCure from "./pages/freemedcure";
+import FastQandA from "./pages/fastqanda";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/home" component={Home} />
           <Route path="/aboutme" component={AboutMe} />
           <Route path="/projects/freemedcure" component={FreeMedCure} />
+          <Route path="/projects/fastqanda" component={FastQandA} />
           <Redirect from="/" to="/home" />
         </Switch>
         <Footer />

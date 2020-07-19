@@ -1,0 +1,17 @@
+/* ===== aboutme.css ===== */
+
+.wrapper {
+  padding-top: 80px;
+  min-height: 100vh;
+  background-color: rgb(30, 30, 30);
+  color: white;
+
+  .link {
+    font-weight: bold;
+    color: #039dfc;
+  }
+
+  .image {
+    max-width: 450px;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LinkedInBtn from "./LinkedInBtn";
-import "../styles/navBar.css";
+import styles from "../styles/navBar.module.scss";
 import EmailBtn from "./emailBtn";
 
 class NavBar extends Component {
@@ -27,7 +27,7 @@ class NavBar extends Component {
     if (onTop && !expanded) {
       this.setState({ navClass: "" });
     } else {
-      this.setState({ navClass: "navBg" });
+      this.setState({ navClass: styles.navBg });
     }
   };
 
@@ -41,19 +41,19 @@ class NavBar extends Component {
   render() {
     return (
       <nav
-        className={`navbar navbar-expand-md navbar-dark fixed-top ${this.state.navClass}`}
+        className={`navbar navbar-expand-md navbar-dark fixed-top ${styles.nav} ${this.state.navClass}`}
       >
         <Link to="/home" className="navbar-brand">
           <img
             src={require("../assets/img/android-chrome-512x512.png")}
             alt="logo"
-            className="logo"
+            className={styles.logo}
           />
         </Link>
 
         <button
           id="navbar-toggle-button"
-          className="navbar-toggler"
+          className={`navbar-toggler ${styles.toggler}`}
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -67,15 +67,23 @@ class NavBar extends Component {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
-            <Link to="/home" className="navLink" onClick={this.handleClick}>
+            <Link
+              to="/home"
+              className={styles.navLink}
+              onClick={this.handleClick}
+            >
               Home
             </Link>
-            <Link to="/aboutme" className="navLink" onClick={this.handleClick}>
+            <Link
+              to="/aboutme"
+              className={styles.navLink}
+              onClick={this.handleClick}
+            >
               About Me
             </Link>
             <li className="nav-item dropdown">
               <a
-                className="navLink dropdown-toggle"
+                className={`dropdown-toggle ${styles.navLink}`}
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -85,10 +93,20 @@ class NavBar extends Component {
                 Recent Projects
               </a>
 
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div
+                className={`dropdown-menu ${styles.dropdownMenu}`}
+                aria-labelledby="navbarDropdown"
+              >
+                <Link
+                  to="/projects/fastqanda"
+                  className={`dropdown-item ${styles.dropdownItem}`}
+                  onClick={this.handleClick}
+                >
+                  Fast Q&A <span className="badge badge-primary">New</span>
+                </Link>
                 <Link
                   to="/projects/freemedcure"
-                  className="dropdown-item"
+                  className={`dropdown-item ${styles.dropdownItem}`}
                   onClick={this.handleClick}
                 >
                   FreeMedCure
@@ -97,7 +115,7 @@ class NavBar extends Component {
             </li>
           </ul>
 
-          <ul className="mt-5 mt-md-0 ml-auto">
+          <ul className={`mt-5 mt-md-0 ml-auto ${styles.contactList}`}>
             <li className="list-inline-item">
               <LinkedInBtn onClick={this.handleClick} />
             </li>

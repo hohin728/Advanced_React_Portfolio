@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../styles/home.css";
+import styles from "../styles/home.module.scss";
 import {
   faHtml5,
   faCss3,
@@ -17,11 +17,20 @@ class Home extends Component {
   data = {
     projects: [
       {
+        title: "Fast Q&A",
+        subtitle: "a web-based e-learning platform",
+        description:
+          "This is my Final Year Project working with my groupmate. Interested? ",
+        image: require("../assets/img/projects/fastQ&A/chinese_handwriting_recognition.JPG"),
+        link: "/projects/fastqanda",
+      },
+      {
         title: "FreeMedCure",
         subtitle: "a medical record system",
         description:
           "I have built a system for my friend who is studying chinese medicine. Want to know more?",
         image: require("../assets/img/projects/freemedcure/login_page.png"),
+        link: "/projects/freemedcure",
       },
     ],
   };
@@ -31,30 +40,31 @@ class Home extends Component {
   }
 
   render() {
-    const { title, subtitle, description, image } = this.data.projects[0];
+    const { projects } = this.data;
+
     return (
       <>
-        <header className="bg-background big-parallax">
+        <header className={`${styles.header}`}>
           <div className="container">
-            <div className="row align-items-center">
+            <div className={`row align-items-center ${styles.content}`}>
               <div className="bg-heading col-12 col-md-6">
                 <h1>Welcome!</h1>
                 <p className="lead">
-                  I'm <span className="highlight">Gordon</span>, who is
-                  passionate about web development and love exploring the latest
-                  technologies.
+                  I'm Gordon, who is passionate about{" "}
+                  <span className={styles.highlight}>web development</span> and
+                  love exploring the latest technologies.
                 </p>
               </div>
             </div>
           </div>
         </header>
 
-        <div id="whoAmI">
+        <section className={styles.whoAmI}>
           <div className="container py-5">
             <div className="row align-items-center">
               <div className="left col-md-5">
                 <h1 className={`text-center`}>
-                  <span className="blue-lg-txt">Who</span> am I...
+                  <span className={styles.largeBlueTxt}>Who</span> am I...
                 </h1>
               </div>
 
@@ -77,9 +87,9 @@ class Home extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div id="skills-div">
+        <section className={styles.skills}>
           <div className="container py-5">
             <div className="row">
               <h1 className="section-heading">Skills</h1>
@@ -88,18 +98,18 @@ class Home extends Component {
               <div className="col-lg-7">
                 <img
                   src={require("../assets/img/wordcloud_trans.png")}
-                  className="wordCloud"
+                  className={styles.wordCloud}
                 />
               </div>
               <div className="col-lg-5">
-                <p className="txt-grey">
+                <p className={`${styles.greyTxt} my-4 mt-lg-0`}>
                   I've been preparing to be a web developer. However, I do not
                   satisfy with what I have learnt from the university only, but
                   always motivated to learn new technologies and programming
                   skills to improvedf myself.
                 </p>
 
-                <div className="icons">
+                <div className={styles.icons}>
                   <div className="container">
                     <ProgressBar
                       icon={faHtml5}
@@ -147,34 +157,38 @@ class Home extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div id="projects-div" className="parallax">
+        <section className={`parallax ${styles.projects}`}>
           <div className="container">
             <div className="row">
               <div className="col-md-6 col-12">
-                <p className="description mt-3">
+                <p className={`${styles.description} mt-3`}>
                   Take a look of what I achieved. Actions speak louder than
                   words...
                 </p>
               </div>
               <div className="col-md-6 col-12">
-                <h1 className="heading">Projects</h1>
+                <h1 className={styles.heading}>Projects</h1>
               </div>
             </div>
           </div>
 
           <div className="container px-4">
-            <div className="row pb-5">
-              <ProjectButton
-                title={title}
-                subtitle={subtitle}
-                description={description}
-                image={image}
-              />
+            <div className="row pb-5 jusfiy-content-between">
+              {projects.map((project, index) => (
+                <ProjectButton
+                  title={project.title}
+                  subtitle={project.subtitle}
+                  description={project.description}
+                  image={project.image}
+                  link={project.link}
+                  key={`project-${index}`}
+                />
+              ))}
             </div>
           </div>
-        </div>
+        </section>
       </>
     );
   }

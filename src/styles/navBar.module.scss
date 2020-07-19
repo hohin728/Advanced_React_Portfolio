@@ -1,0 +1,64 @@
+/* navBar.css */
+
+.nav {
+  background: rgba(0, 0, 0, 0);
+  transition: 1s;
+  min-height: 1rem;
+
+  &.navBg {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  img.logo {
+    max-height: 40px;
+  }
+
+  .toggler:focus {
+    outline: none;
+  }
+
+  .navLink {
+    color: white;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: 0.5s;
+    border-radius: 0.5rem;
+
+    &:hover {
+      text-decoration: none;
+      background-color: rgba(0, 140, 255, 0.6);
+      color: white;
+    }
+  }
+
+  ul.contactList {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  div.dropdownMenu {
+    width: 80%;
+    margin: auto;
+
+    .dropdownItem {
+      transition: 0.5s;
+
+      &:hover {
+        background-color: white;
+        color: rgba(0, 140, 255, 0.6);
+        font-size: 110%;
+        transition: 0.5s;
+      }
+
+      :global(.badge) {
+        position: relative;
+        top: -3px;
+      }
+    }
+  }
+}
