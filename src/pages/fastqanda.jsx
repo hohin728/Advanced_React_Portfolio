@@ -27,7 +27,7 @@ class FastQandA extends Component {
     title: "Fast Q&A",
     subtitle:
       "A web-based e-learning platform aims at providing fast questioning and answering process to enhance in-class interactivity.",
-    video: require("../assets/videos/FastQ&A_1min_Demo.mp4"),
+    video: require("../assets/videos/FastQ&A_1_min_Demo.mp4"),
     techIcons: [
       { title: "Laravel", icon: faLaravel },
       { title: "PHP", icon: faPhp },
